@@ -49,6 +49,14 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+client.on(Events.InteractionCreate, async interaction => {
+	if (!interaction.isStringSelectMenu()) return;
+
+	const selected = interaction.values.join(', ');
+
+	await interaction.update(`The user selected ${selected}!`);
+});
+
 
 
 client.login(token);
