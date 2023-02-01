@@ -8,6 +8,14 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const db = mysql.createConnection({   host: "localhost",   user: "root",   password: "", database:"" });
 db.connect(function(err) {   if (err) throw err;   console.log("Connecté à la base de données MySQL!"); });
+db.query("SELECT * from hs_chapitre",
+ function (err, result) {
+		if (err) throw err;
+		for(var tab in result){
+			console.log(result[tab].nom);
+		}    
+	}
+); 
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
