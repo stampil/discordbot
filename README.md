@@ -2,7 +2,8 @@
 nodejs
 avoir installer discord.js dans le meme repertoire que l'install d'origine de nodejs
 npm install -g discord.js
-npm install sequelize sqlite3
+npm install mysql 
+( mysql npm est juste un driver ) il faut installer et lancer wamp ou autre mysql en plus
 
 
 
