@@ -21,3 +21,6 @@ config.js :
  https://discord.com/api/oauth2/authorize?client_id=889204644792897546&permissions=405874670592&scope=bot%20applications.commands
  
  https://discord.com/developers/applications/889204644792897546/oauth2/general
+ 
+ guide discord.js : 
+ https://discordjs.guide/#before-you-begin
