@@ -6,7 +6,7 @@ const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-const db = mysql.createConnection({   host: "localhost",   user: "root",   password: "" });
+const db = mysql.createConnection({   host: "localhost",   user: "root",   password: "", database:"" });
 db.connect(function(err) {   if (err) throw err;   console.log("Connecté à la base de données MySQL!"); });
 
 client.commands = new Collection();
