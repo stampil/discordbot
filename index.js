@@ -1,17 +1,13 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const Sequelize = require('sequelize');
+const mysql = require('mysql');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-const sequelize = new Sequelize('database', 'user', 'password', {
-	host: 'localhost',
-	dialect: 'sqlite',
-	logging: false,
-	// SQLite only
-	storage: 'database.sqlite',
-});
+
+const db = mysql.createConnection({   host: "localhost",   user: "root",   password: "" });
+db.connect(function(err) {   if (err) throw err;   console.log("Connecté à la base de données MySQL!"); });
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
